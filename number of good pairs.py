@@ -15,4 +15,4 @@ class Solution(object):
             else:
                 count_dict[num] = 1  
 
-        return good_pairs
+        return good_pairs   
