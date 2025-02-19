@@ -6,7 +6,7 @@ class Solution(object):
         """
         
         s = [i.lower() for i in s if i.isalpha() or i.isnumeric() ]
-        print(s)
+        
         i = 0 
         j = len(s) - 1 
 
