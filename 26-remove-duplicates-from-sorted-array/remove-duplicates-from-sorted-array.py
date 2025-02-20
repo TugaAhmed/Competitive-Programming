@@ -8,7 +8,8 @@ class Solution(object):
         current = -101 
         k = 0 
         i = 0
-        while i < len(nums) :
+        nums_len = len(nums)
+        while i < nums_len :
             num = nums[i]
             if num != current : 
                 current = num 
@@ -20,4 +21,4 @@ class Solution(object):
                 nums.remove(num)
                 nums.append('_')
 
-        return len(nums)-k 
+        return nums_len-k 
