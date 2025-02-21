@@ -7,10 +7,11 @@ class Solution(object):
 
         ans = 0 
         index = len(columnTitle)
-
+        counter = 26 ** (index-1)
 
         for letter in columnTitle : 
-            ans += (26)**(index-1) * (ord(letter)-64)
+            ans += counter * (ord(letter)-64)
             index -= 1 
+            counter /= 26
 
         return ans
