@@ -1,3 +1,4 @@
+from collections import defaultdict
 class Solution(object):
     def wordPattern(self, pattern, s):
         """
@@ -6,19 +7,20 @@ class Solution(object):
         :rtype: bool
         """
         
-        map_dict = {}
+        map_dict1 = defaultdict(int)
+        map_dict2 = defaultdict(int)
         s = s.split()
-        mapped = []
+        
         if len(s) != len(pattern) :
             return False
 
         for i in range(len(pattern)) :
-            if pattern[i] not in map_dict : 
-                if s[i] in mapped :
+            if not map_dict1[pattern[i]] : 
+                if map_dict2[s[i]] :
                     return False
-                map_dict[pattern[i]] = s[i]
-                mapped.append(s[i])
-            elif pattern[i] in map_dict and map_dict[pattern[i]] != s[i] :
+                map_dict1[pattern[i]] = s[i]
+                map_dict2[s[i]] = pattern[i]
+            elif map_dict1[pattern[i]] != s[i] :
                 return False 
 
         return True 
