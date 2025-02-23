@@ -9,8 +9,10 @@ class Solution(object):
                       '6':36  , '7':49 , '8':64 , '9':81}
 
         ans = 0 
-        for i in range(100) :
+        seen = []
+        while n != 1 and n not in seen :
             old_n = str(n)
+            seen.append(n)
             # print("list",[power_dict[old_n[i]] for i in range(len(old_n))])
             ans = sum([power_dict[old_n[i]] for i in range(len(old_n))])
             # print("ans",ans)
@@ -18,5 +20,6 @@ class Solution(object):
                 return True 
             n = int(ans) 
             # print("n",n) 
-        
+        if n == 1 :
+            return True
         return False
