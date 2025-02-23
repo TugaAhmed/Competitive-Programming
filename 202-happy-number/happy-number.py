@@ -9,7 +9,7 @@ class Solution(object):
                       '6':36  , '7':49 , '8':64 , '9':81}
 
         ans = 0 
-        for i in range(1000) :
+        for i in range(100) :
             old_n = str(n)
             # print("list",[power_dict[old_n[i]] for i in range(len(old_n))])
             ans = sum([power_dict[old_n[i]] for i in range(len(old_n))])
