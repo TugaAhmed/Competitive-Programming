@@ -7,10 +7,17 @@ class Solution(object):
         """
         
         count_dict = Counter(s)
-
-        even_sum = sum(i for i in count_dict.values() if i%2 == 0 )
-        odd_vals = [i-1 for i in count_dict.values() if i%2 != 0 ]
+        ans =  0
+        odd_added = False
+        for val in count_dict.values() :
+            if val % 2 == 0 : 
+                ans += val 
+            else : 
+                ans += val - 1 
+            
+            if val % 2 != 0 and not odd_added :
+                ans += 1 
+                odd_added = True 
         
-        if odd_vals :
-            return (sum(odd_vals) + even_sum) + 1 
-        return even_sum
+        return ans 
+            
